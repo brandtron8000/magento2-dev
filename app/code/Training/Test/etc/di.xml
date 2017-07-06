@@ -11,4 +11,7 @@
   <type name="Magento\Catalog\Model\Product">
     <plugin name="training_test_model_product_plugin" type="Training\Test\Plugin\Magento\Catalog\Model\Product\Plugin"/>
   </type>
+  <type name="Magento\Theme\Block\Html\Footer">
+    <plugin name="training_test_magento_theme_block_html_footer_plugin" type="Training\Test\Plugin\Magento\Theme\Block\Html\Footer\Plugin"/>
+  </type>
 </config>
