@@ -6,6 +6,6 @@ class Plugin
 {
     public function aftergetCopyright(\Magento\Theme\Block\Html\Footer $subject, $result)
     {
-        return $result = "Customized copyright!";
+        return "Customized Copyright!";
     }
 }

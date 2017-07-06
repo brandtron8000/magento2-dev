@@ -14,4 +14,7 @@
   <type name="Magento\Theme\Block\Html\Footer">
     <plugin name="training_test_magento_theme_block_html_footer_plugin" type="Training\Test\Plugin\Magento\Theme\Block\Html\Footer\Plugin"/>
   </type>
+  <type name="Magento\Theme\Block\Html\Breadcrumbs">
+    <plugin name="traning_test_magento_theme_block_html_breadcrumbs_plugin" type="Training\Test\Plugin\Magento\Theme\Block\Html\Breadcrumbs\Plugin"/>
+  </type>
 </config>
