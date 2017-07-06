@@ -249,7 +249,7 @@ class Bootstrap
     public function run(AppInterface $application)
     {
         try {
-            try {
+            try { //** inserted exception for Unit 1 Exercise THISISANEXCEPTION!!
                 \Magento\Framework\Profiler::start('magento');
                 $this->initErrorHandler();
                 $this->initObjectManager();
