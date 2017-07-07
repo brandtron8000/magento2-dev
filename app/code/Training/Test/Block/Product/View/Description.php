@@ -3,8 +3,8 @@ namespace Training\Test\Block\Product\View;
 
 class Description extends \Magento\Framework\View\Element\Template
 {
-  public function beforeToHtml(\Magento\Catalog\Block\Product\View\Description
-  $originalBlock) {
+  public function beforeToHtml(\Magento\Catalog\Block\Product\View\Description $originalBlock) {
     $originalBlock->getProduct()->setDescription('DAMN Good Covfefe!');
+    $originalBlock->setTemplate('Training_Test::description.phtml');
   }
 }
