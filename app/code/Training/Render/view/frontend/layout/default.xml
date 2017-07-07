@@ -11,5 +11,13 @@
         </arguments>
       </block>
     </referenceContainer>
+    <referenceBlock name="header.links">
+      <block class="Magento\Framework\View\Element\Html\Link" name="example.link" before="-">
+        <arguments>
+          <argument name="label" xsi:type="string" translate="false">Target Render Exercise</argument>
+          <argument name="path" xsi:type="string">training_render/layout/onecolumn</argument>
+        </arguments>
+      </block>
+    </referenceBlock>
   </body>
 </page>
