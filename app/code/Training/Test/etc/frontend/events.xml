@@ -11,6 +11,7 @@
     <observer disabled="true" name="training_test" instance="Training\Test\Observer\RedirrectToProductView" shared="false" />
   </event>
   <event name="controller_front_send_response_before">
-    <observer name="training_test" instance="Training\Test\Observer\LogPageOutput" shared="false" />
+    <!-- Disabled Observer -->
+    <observer disabled="true" name="training_test" instance="Training\Test\Observer\LogPageOutput" shared="false" />
   </event>
 </config>
