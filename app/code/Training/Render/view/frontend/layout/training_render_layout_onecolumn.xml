@@ -4,4 +4,8 @@
     <head>
         <title>Training Render Exercise</title>
     </head>
+    <body>
+        <!-- stupid way <remove name="training.example.first"/> -->
+        <referenceBlock name="training.example.first" remove="true"/>
+    </body>
 </page>
