@@ -23,6 +23,6 @@
     </arguments>
   </type>
   <type name="Magento\Catalog\Block\Product\View\Description">
-    <plugin name="product-view-desription-plugin" type="Training\Test\Block\Product\View\Description" sortOrder="10"/>
+    <plugin disabled="true" name="product-view-desription-plugin" type="Training\Test\Block\Product\View\Description" sortOrder="10"/>
   </type>
 </config>
