@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--                                                                                                                                                                                                               /**                                                                                                                                                                                                                 * Copyright © 2015 Magento. All rights reserved.                                                                                                                                                                   * See COPYING.txt for license details.                                                                                                                                                                             */                                                                                                                                                                                                                -->
+<!-- comment fix -->
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <columns name="sales_order_columns">
         <column name="require_verification">
@@ -13,7 +13,7 @@
                 </item>
             </argument>
         </column>
-    </columns>    
+    </columns>
     <container name="listing_top">
         <massaction name="listing_massaction">
             <action name="verify">
