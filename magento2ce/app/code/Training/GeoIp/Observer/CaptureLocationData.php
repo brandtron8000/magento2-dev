@@ -11,18 +11,35 @@ namespace Training\GeoIp\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
-use Training\GeoIp\Model\GeoIpLookup;
+use Magento\Framework\Registry;
+use Training\GeoIp\Model\GeoIpLookupInterface;
 
 class CaptureLocationData implements ObserverInterface
 {
+
     /**
-     * @var GeoIpLookup
+     * @var GeoIpLookupInterface
      */
     private $geoIpLookup;
 
-    public function __construct(GeoIpLookup $geoIpLookup)
+    /**
+     * @var Registry
+     */
+    private $registry;
+
+    const LOCATION_DATA = 'geoip_location_data';
+
+
+    /**
+     * CaptureLocationData constructor.
+     *
+     * @param GeoIpLookupInterface $geoIpLookup
+     * @param Registry $registry
+     */
+    public function __construct(GeoIpLookupInterface $geoIpLookup, Registry $registry)
     {
         $this->geoIpLookup = $geoIpLookup;
+        $this->registry = $registry;
     }
 
 
@@ -32,8 +49,10 @@ class CaptureLocationData implements ObserverInterface
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        $ip = $this->geoIpLookup->getLocationData();
-        print_r($ip);
+        if (!$this->registry->registry(self::LOCATION_DATA)) {
+            $locationData = $this->geoIpLookup->getLocationData();
+            $this->registry->register(self::LOCATION_DATA, $locationData);
+        }
 
     }
 }

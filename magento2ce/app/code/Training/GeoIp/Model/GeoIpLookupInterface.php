@@ -9,7 +9,7 @@
 namespace Training\GeoIp\Model;
 
 
-interface GeoIpLookup
+interface GeoIpLookupInterface
 {
     /**
      * @return []

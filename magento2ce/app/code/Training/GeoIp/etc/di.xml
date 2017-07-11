@@ -1,11 +1,15 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
     <type name="Magento\Theme\Block\Html\Header">
         <plugin name="training_geoip_welcome_message"
                 type="Training\GeoIp\Plugin\WelcomeMessage" />
     </type>
 
-    <preference for="Training\GeoIp\Model\GeoIpLookup"
+    <preference for="Training\GeoIp\Model\GeoIpLookupInterface"
                 type="Training\GeoIp\Model\FreeGeoIpLookup" />
+
+    <preference for="Training\GeoIp\Model\WelcomeLookupInterface"
+                type="Training\GeoIp\Model\WelcomeLookupSimple" />
 </config>
