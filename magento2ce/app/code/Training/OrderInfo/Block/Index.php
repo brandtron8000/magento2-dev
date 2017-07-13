@@ -22,8 +22,4 @@ class Index extends Template
         return $this->getUrl('*/*/process');
     }
 
-    public function getOrderInfoId() {
-
-    }
-
 }
