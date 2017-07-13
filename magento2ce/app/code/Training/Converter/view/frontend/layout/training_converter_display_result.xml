@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Currency Converter - Results</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Training\Converter\Block\Result"
+                   name="training_converter.result"
+                   template="Training_Converter::result.phtml" />
+        </referenceContainer>
+    </body>
+</page>

@@ -18,7 +18,7 @@ class GoogleConverter implements ConverterInterface
      */
     private $clientFactory;
 
-    const CONVERT_URL = 'https://www.google.com/finance/converter?';
+    const CONVERT_URL = 'https://www.google.com/finance/converter?a=%s&from=%s&to=%s';
 
     /**
      * GoogleConverter constructor.
@@ -36,15 +36,15 @@ class GoogleConverter implements ConverterInterface
      * @param $from
      * @param $to
      * @return array
+     * @throws \Exception
      */
     public function convert($amount, $from, $to)
     {
 
-        $url = self::CONVERT_URL . "a=" . $amount . "&from=" . $from . "&to=" . $to;
+        $url = sprintf(self::CONVERT_URL, $amount, $from, $to);
         $client = $this->clientFactory->create();
         $client->get($url);
         $response = $client->getBody();
-
         if (preg_match("%<span class=bld>(\d+\.\d+).*?</span>%", $response, $m)) {
             $ret_value = $m[1];
             $ret = [
@@ -54,7 +54,9 @@ class GoogleConverter implements ConverterInterface
                 'result' => $ret_value
             ];
         }
-
+        else {
+            throw new \Exception(__('No result'));
+        }
         return $ret;
     }
 

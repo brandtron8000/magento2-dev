@@ -53,13 +53,25 @@ class Rates extends Action
      */
     public function execute() {
 
-        $URL_a = $this->getRequest()->getParam('amount');
-        $URL_from = $this->getRequest()->getParam('from');
-        $URL_to = $this->getRequest()->getParam('to');
-
         $resultJson = $this->jsonFactory->create();
 
-        $converted = $this->converter->convert($URL_a, $URL_from, $URL_to);
+        $amount = $this->getRequest()->getParam('amount');
+        if (!$amount) {
+            $result['error'] = __('Missing parameter');
+            $resultJson->setData($result);
+
+            return $resultJson;
+        }
+
+        $from = $this->getRequest()->getParam('from', 'USD');
+        $to = $this->getRequest()->getParam('to', 'EUR');
+
+        try {
+            $converted = $this->converter->convert($amount, $from, $to);
+        }
+        catch (\Exception $e) {
+            $converted['error'] = __('There was an error processing your request');
+        }
 
         $resultJson->setData($converted);
 

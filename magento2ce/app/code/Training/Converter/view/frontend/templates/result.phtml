@@ -1,0 +1,8 @@
+<?php /** @var \Training\Converter\Block\Result $block  */ ?>
+
+<p>
+    Result from converting <?php echo $block->getAmount() ?> from <?php echo $block->getFrom() ?> to <?php echo $block->getTo() ?>: <strong><?php echo $block->getResult() ?></strong>
+</p>
+<form action="<?php echo $block->getUrl('*/*/process') ?>" method="post">
+    <input type="submit" value="Go Back">
+</form>

@@ -1,0 +1,40 @@
+<?php /** @var \Training\Converter\Block\Select $block  */ ?>
+
+<form action="<?php echo $block->getFormAction() ?>" method="post">
+
+    <?php echo $block->getBlockHtml('formkey') ?>
+
+    <p>
+        <label>
+            Amount:
+            <input type="text" name="amount">
+        </label>
+    </p>
+
+    <p>
+        <label>
+            From:
+            <select name="from">
+                <option value="">Select ...</option>
+                <?php foreach ($block->getCurrencies() as $currency): ?>
+                    <option value="<?php echo $currency ?>"><?php echo $currency ?></option>
+                <?php endforeach; ?>
+            </select>
+        </label>
+    </p>
+
+    <p>
+        <label>
+            To:
+            <select name="to">
+                <option value="">Select ...</option>
+                <?php foreach ($block->getCurrencies() as $currency): ?>
+                    <option value="<?php echo $currency ?>"><?php echo $currency ?></option>
+                <?php endforeach; ?>
+            </select>
+        </label>
+    </p>
+
+    <input type="submit" />
+
+</form>

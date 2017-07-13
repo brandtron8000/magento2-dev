@@ -1,0 +1,16 @@
+<?php /** @var \Training\OrderInfo\Block\Index $block  */ ?>
+
+<form action="<?php echo $block->getFormAction() ?>" method="post">
+
+    <?php echo $block->getBlockHtml('formkey') ?>
+
+    <p>
+        <label>
+            Order #:
+            <input type="text" name="order_id">
+        </label>
+    </p>
+
+    <input type="submit" />
+
+</form>

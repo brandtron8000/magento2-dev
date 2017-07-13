@@ -1,0 +1,14 @@
+<?php /** @var \Training\OrderInfo\Block\Details $block  */ ?>
+
+<p>
+    Order Details:
+</p>
+<p>
+    Order ID: <?php echo $block->getOrderId() ?>
+</p>
+<p>
+    Status: <?php echo $block->getStatus() ?>
+</p>
+<form action="<?php echo $block->getUrl('*/*/index') ?>" method="post">
+    <input type="submit" value="Go Back">
+</form>
