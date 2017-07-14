@@ -1,0 +1,19 @@
+{
+  "name": "training/module-vendor",
+  "description": "N/A",
+  "require": {
+    "php": "^7.0.0"
+  },
+  "type": "magento2-module",
+  "license": [
+    "OSL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Training\\Vendor\\": ""
+    }
+  }
+}
